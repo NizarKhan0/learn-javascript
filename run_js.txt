@@ -1,0 +1,1 @@
+CTRl + SHIFT + J utk open console
