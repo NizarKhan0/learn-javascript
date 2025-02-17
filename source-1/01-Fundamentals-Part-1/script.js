@@ -46,7 +46,7 @@ console.log(population);
 
 //Data Types
 
-
+/*
 //bool to string
 let javascriptIsFun = true;
 console.log(javascriptIsFun);
@@ -85,3 +85,43 @@ console.log(typeof isIsland);
 console.log(typeof language);
 console.log(typeof population);
 console.log(typeof country);
+*/
+
+//let, const and var
+
+// let = benda yg akan berubah/bolh ubah
+let age = 30;
+age = 24;
+
+// const = benda yg tak berubah dan tak boleh empty variable
+const birthYear = 2001;
+// birthYear = 1991; (error)
+// const birthYear;
+
+// var = old way define variable same as let (better jgn guna)
+var job = "Programmer";
+job = "Designer";
+
+
+//not assign variable (jgn buat)
+lastName = "roronoa";
+console.log(lastName);
+
+// LECTURE: let, const and var
+// 1. Set the value of 'language' to the language spoken where you live (some
+// countries have multiple languages, but just choose one)
+// 2. Think about which variables should be const variables (which values will never
+// change, and which might change?). Then, change these variables to const.
+// 3. Try to change one of the changed variables now, and observe what happens
+
+language = "Bahasa Melayu";
+const country = "Malaysia";
+const continent = "Asia";
+const isIsland = false;
+// isIsland = true; try ubah variable
+
+console.log(language);
+console.log(country);
+console.log(continent);
+console.log(isIsland);
+
