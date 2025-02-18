@@ -89,6 +89,7 @@ console.log(typeof country);
 
 //let, const and var
 
+/*
 // let = benda yg akan berubah/bolh ubah
 let age = 30;
 age = 24;
@@ -124,4 +125,90 @@ console.log(language);
 console.log(country);
 console.log(continent);
 console.log(isIsland);
+*/
+
+// Basic Operators
+
+/*
+//Math Operators
+const now = 2025;
+const ageNizar = now - 2001;
+const ageShari = now - 2003;
+console.log(ageNizar, ageShari);
+
+console.log(ageNizar * 2, ageNizar / 10, 2 ** 3);
+// 2 ** 3 means 2 to the power of 3 = 8
+// 2 ** 0.5 = square root of 2 = 1.4142135623730951
+
+const firstName = "Nizar";
+const lastName = "Khan";
+console.log(firstName + " " + lastName);
+
+//Assignment Operators
+let x = 10 + 5; // 15
+x += 10; // x = x + 10 = 25
+x *= 4; // x = x * 4 = 100
+x++; // x = x + 1
+x--; // x = x - 1
+x--; // x = x - 1
+console.log(x);
+
+//Comparison Operators
+console.log(ageNizar > ageShari); // >, <, >=, <=, ==, === (!==)
+console.log(ageShari >= 18);
+
+const isFullAge = ageShari >= 18;
+console.log(now - 2001 > now - 2003);
+
+// LECTURE: Basic Operators
+// 1. If your country split in half, and each half would contain half the population,
+// then how many people would live in each half?
+// 2. Increase the population of your country by 1 and log the result to the console
+// 3. Finland has a population of 6 million. Does your country have more people than
+// Finland?
+// 4. The average population of a country is 33 million people. Does your country
+// have less people than the average country?
+// 5. Based on the variables you created, create a new variable 'description'
+// which contains a string with this format: 'Portugal is in Europe, and its 11 million
+// people speak portuguese'
+
+let country = "Malaysia";
+let continent = "Asia";
+let language = "Bahasa Melayu";
+let population = 35028030; // Original population
+
+// Task 1: Split population
+console.log(population / 2); // 17514015
+
+// Task 2: Increase population by 1
+population++;
+console.log(population); // 35028031
+
+// Task 3: Compare with Finland's population
+console.log(population > 6000000); // true (35M > 6M)
+
+// Task 4: Compare with average population
+console.log(population < 33000000); // false (35M > 33M)
+
+// Task 5: Create description
+const description = `${country} is in ${continent}, and its ${population} people speak ${language}`;
+console.log(description);
+// "Malaysia is in Asia, and its 35028031 people speak Bahasa Melayu"
+
+*/
+
+//Operator Precedence
+
+const now = 2025;
+const ageNizar = now - 2001;
+const ageShari = now - 2003;
+
+console.log(now - 2001 > now - 2003);
+
+let x, y;
+x = y = 25 - 10 - 5; // x = y = 10, x = 10
+console.log(x, y);
+
+const averageAge = (ageNizar + ageShari) / 2;
+console.log(ageNizar, ageShari, averageAge);
 
