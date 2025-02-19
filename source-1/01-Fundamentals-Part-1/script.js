@@ -217,13 +217,35 @@ console.log(description);
 
 // BMI = mass / height ** 2; OR BMI = mass / (height * height);
 
-let markWeight = 78;
-let markHeight = 1.69;
-let johnWeight = 92;
-let johnHeight = 1.95;
+// let markWeight = 78;
+// let markHeight = 1.69;
+// let johnWeight = 92;
+// let johnHeight = 1.95;
 
-let markBMI = markWeight / markHeight ** 2;
-let johnBMI = johnWeight / (johnHeight * johnHeight);
-let markHigherBMI = markBMI > johnBMI;
+// let markBMI = markWeight / markHeight ** 2;
+// let johnBMI = johnWeight / (johnHeight * johnHeight);
+// let markHigherBMI = markBMI > johnBMI;
 
-console.log(markBMI, johnBMI, markHigherBMI);
+// console.log(markBMI, johnBMI, markHigherBMI);
+
+
+//String and Template Literals
+
+const firstName = 'Nizar';
+const job = 'Programmer';
+const birthYear = 2001;
+const year = 2025;
+
+const nizar = "I'm " + firstName + ', a ' + (year - birthYear) + ' years old ' + job + '!';
+console.log(nizar);
+
+const nizarNew = `I'm ${firstName}, a ${2025 - birthYear} years old ${job}!`;
+console.log(nizarNew);
+
+console.log(`Just a regular string...`);
+
+console.log('String with \n\t tab and new line characters');
+
+console.log(`String with
+multiple
+lines`);
