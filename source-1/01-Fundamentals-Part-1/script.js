@@ -199,16 +199,31 @@ console.log(description);
 
 //Operator Precedence
 
-const now = 2025;
-const ageNizar = now - 2001;
-const ageShari = now - 2003;
+// const now = 2025;
+// const ageNizar = now - 2001;
+// const ageShari = now - 2003;
 
-console.log(now - 2001 > now - 2003);
+// console.log(now - 2001 > now - 2003);
 
-let x, y;
-x = y = 25 - 10 - 5; // x = y = 10, x = 10
-console.log(x, y);
+// let x, y;
+// x = y = 25 - 10 - 5; // x = y = 10, x = 10
+// console.log(x, y);
 
-const averageAge = (ageNizar + ageShari) / 2;
-console.log(ageNizar, ageShari, averageAge);
+// const averageAge = (ageNizar + ageShari) / 2;
+// console.log(ageNizar, ageShari, averageAge);
 
+
+//Coding Challenge 1
+
+// BMI = mass / height ** 2; OR BMI = mass / (height * height);
+
+let markWeight = 78;
+let markHeight = 1.69;
+let johnWeight = 92;
+let johnHeight = 1.95;
+
+let markBMI = markWeight / markHeight ** 2;
+let johnBMI = johnWeight / (johnHeight * johnHeight);
+let markHigherBMI = markBMI > johnBMI;
+
+console.log(markBMI, johnBMI, markHigherBMI);
