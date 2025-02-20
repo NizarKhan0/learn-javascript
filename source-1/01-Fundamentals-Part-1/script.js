@@ -299,7 +299,7 @@ if (population > averagePopulation) {
 }
     */
 
-
+/*
 //Type Conversion
 
 const inputYear = '2001';
@@ -320,3 +320,28 @@ console.log('23' / '2');
 let n = '1' + 1; // '11'
 n = n - 1;
 console.log(n);
+*/
+
+// Truthy and Falsy values
+
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean('Nizar'));
+console.log(Boolean({}));
+console.log(Boolean(''));
+
+const money = 0;
+if (money) {
+    console.log("Don't spend it all");
+} else {
+    console.log('You should get a job!');
+}
+
+// 0 = false;
+// '' = false;
+let height = 0;
+if (height) {
+    console.log('YAY! Height is defined');
+} else {
+    console.log('Height is UNDEFINED');
+}
