@@ -231,21 +231,68 @@ console.log(description);
 
 //String and Template Literals
 
-const firstName = 'Nizar';
-const job = 'Programmer';
+// const firstName = 'Nizar';
+// const job = 'Programmer';
+// const birthYear = 2001;
+// const year = 2025;
+
+// const nizar = "I'm " + firstName + ', a ' + (year - birthYear) + ' years old ' + job + '!';
+// console.log(nizar);
+
+// const nizarNew = `I'm ${firstName}, a ${2025 - birthYear} years old ${job}!`;
+// console.log(nizarNew);
+
+// console.log(`Just a regular string...`);
+
+// console.log('String with \n\t tab and new line characters');
+
+// console.log(`String with
+// multiple
+// lines`);
+
+//Taking decisions: if / else statements
+
+//Eligibility to driving license
+
+const age = 19;
+// const isOldEnough = age >= 18;
+
+if (age >= 18) {
+    console.log(`Sarah can start driving license 🚗`);
+} else {
+    const yearsLeft = 18 - age;
+    console.log(`Sarah is too young. Wait another ${yearsLeft} years :)`)
+}
+
+
 const birthYear = 2001;
-const year = 2025;
+let century;
 
-const nizar = "I'm " + firstName + ', a ' + (year - birthYear) + ' years old ' + job + '!';
-console.log(nizar);
+if (birthYear <= 2000) {
+    century = 20;
+} else {
+    century = 21;
+}
 
-const nizarNew = `I'm ${firstName}, a ${2025 - birthYear} years old ${job}!`;
-console.log(nizarNew);
+console.log(century);
 
-console.log(`Just a regular string...`);
 
-console.log('String with \n\t tab and new line characters');
 
-console.log(`String with
-multiple
-lines`);
+// LECTURE: Taking Decisions: if / else Statements
+// 1. If your country's population is greater that 33 million, log a string like this to the
+// console: 'Portugal's population is above average'. Otherwise, log a string like
+// 'Portugal's population is 22 million below average' (the 22 is the average of 33
+// minus the country's population)
+// 2. After checking the result, change the population temporarily to 13 and then to
+// 130. See the different results, and set the population back to original
+
+
+const country = "Malaysia";
+const population = 35028031;
+const averagePopulation = 33000000;
+
+if (population > averagePopulation) {
+    console.log(`${country}'s population is above average`);
+} else {
+    console.log(`${country}'s population is ${averagePopulation - population} million below average`);
+}
