@@ -250,10 +250,11 @@ console.log(description);
 // multiple
 // lines`);
 
+
 //Taking decisions: if / else statements
 
 //Eligibility to driving license
-
+/*
 const age = 19;
 // const isOldEnough = age >= 18;
 
@@ -296,3 +297,26 @@ if (population > averagePopulation) {
 } else {
     console.log(`${country}'s population is ${averagePopulation - population} million below average`);
 }
+    */
+
+
+//Type Conversion
+
+const inputYear = '2001';
+console.log(Number(inputYear), inputYear);
+console.log(inputYear) + 18;
+
+console.log(Number('Nizar'));
+console.log(typeof NaN);
+
+console.log(String(23));
+
+//Type Coercion
+console.log('I am ' + 23 + ' years old');
+console.log('23' - '10' - 3);
+console.log('23' * '2');
+console.log('23' / '2');
+
+let n = '1' + 1; // '11'
+n = n - 1;
+console.log(n);
