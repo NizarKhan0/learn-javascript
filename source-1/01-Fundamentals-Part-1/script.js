@@ -354,32 +354,99 @@ console.log(n);
 
 // == loose operator
 
-const age = 18;
+// const age = 18;
 
-if(age === 18) console.log('You just became an adult :D (strict)');
+// if(age === 18) console.log('You just became an adult :D (strict)');
 
-if(age == 18) console.log('You just became an adult :D (loose)');
+// if(age == 18) console.log('You just became an adult :D (loose)');
 
-prompt("What's your favorite number?");
-// const favoriteNumber = prompt("What's your favorite number?");
-const favoriteNumber = Number(prompt("What's your favorite number?"));
-console.log(favoriteNumber);
-console.log(typeof favoriteNumber);
+// prompt("What's your favorite number?");
+// // const favoriteNumber = prompt("What's your favorite number?");
+// const favoriteNumber = Number(prompt("What's your favorite number?"));
+// console.log(favoriteNumber);
+// console.log(typeof favoriteNumber);
 
-if(favoriteNumber === 23) { //23 === 23 -> FALSE
-    console.log('Cool! 23 is an amazing number!');
-}else if(favoriteNumber === 7) {
-    console.log('7 is also a cool number');
-}else {
-    console.log('Number is not 23 or 7');
-}
+// if(favoriteNumber === 23) { //23 === 23 -> FALSE
+//     console.log('Cool! 23 is an amazing number!');
+// }else if(favoriteNumber === 7) {
+//     console.log('7 is also a cool number');
+// }else {
+//     console.log('Number is not 23 or 7');
+// }
 
-if(favoriteNumber !== 23) console.log('Why not 23?');
+// if(favoriteNumber !== 23) console.log('Why not 23?');
 
-let woke = false;
+// let woke = false;
 
-if(woke){
-    console.log('You will be the WINNER!');
+// if(woke){
+//     console.log('You will be the WINNER!');
+// }else{
+//     console.log('You are the LOOSER!'); 
+// }
+
+// LECTURE: Equality Operators: == vs. ===
+// 1. Declare a variable 'numNeighbours' based on a prompt input like this:
+// prompt('How many neighbour countries does your country
+// have?');
+// 2. If there is only 1 neighbour, log to the console 'Only 1 border!' (use loose equality
+// == for now)
+// 3. Use an else-if block to log 'More than 1 border' in case 'numNeighbours'
+// is greater than 1
+// 4. Use an else block to log 'No borders' (this block will be executed when
+// 'numNeighbours' is 0 or any other value)
+// 5. Test the code with different values of 'numNeighbours', including 1 and 0.
+// 6. Change == to ===, and test the code again, with the same values of
+// 'numNeighbours'. Notice what happens when there is exactly 1 border! Why
+// is this happening?
+// 7. Finally, convert 'numNeighbours' to a number, and watch what happens now
+// when you input 1
+// 8. Reflect on why we should use the === operator and type conversion in this
+// situation
+
+// $numNeighbours = Number(prompt('How many neighbour countries does your country have?'));
+
+// if($numNeighbours === 1){
+//     console.log('Only 1 border!');
+// }else if($numNeighbours > 1){
+//     console.log('More than 1 border');
+// }else{
+//     console.log('No borders');
+// }
+
+// console.log($numNeighbours);
+// console.log(typeof $numNeighbours);
+
+
+//Boolean logic: AND, OR, NOT
+
+/*
+&& = AND
+|| = OR
+! = NOT
+*/
+
+const hasDriversLicense = true; // A
+const hasGoodVision = true; // B
+
+console.log(hasDriversLicense && hasGoodVision); //true
+
+console.log(hasDriversLicense || hasGoodVision); //true
+
+console.log(!hasDriversLicense); //false
+
+const shouldDrive = hasDriversLicense && hasGoodVision;
+
+// if (shouldDrive) {
+//     console.log('Sarah is able to drive!');
+// } else {
+//     console.log('Someone else should drive...');
+// }
+
+const isTired = true; // C
+console.log(hasDriversLicense && hasGoodVision && isTired);
+
+if(hasDriversLicense && hasGoodVision && !isTired){
+    console.log('Sarah is able to drive!');
 }else{
-    console.log('You are the LOOSER!'); 
+    console.log('Someone else should drive...');
 }
