@@ -324,24 +324,62 @@ console.log(n);
 
 // Truthy and Falsy values
 
-console.log(Boolean(0));
-console.log(Boolean(undefined));
-console.log(Boolean('Nizar'));
-console.log(Boolean({}));
-console.log(Boolean(''));
+// console.log(Boolean(0));
+// console.log(Boolean(undefined));
+// console.log(Boolean('Nizar'));
+// console.log(Boolean({}));
+// console.log(Boolean(''));
 
-const money = 0;
-if (money) {
-    console.log("Don't spend it all");
-} else {
-    console.log('You should get a job!');
+// const money = 0;
+// if (money) {
+//     console.log("Don't spend it all");
+// } else {
+//     console.log('You should get a job!');
+// }
+
+// // 0 = false;
+// // '' = false;
+// let height = 0;
+// if (height) {
+//     console.log('YAY! Height is defined');
+// } else {
+//     console.log('Height is UNDEFINED');
+// }
+
+
+
+//Equality Operators
+
+// === strict operator
+
+// == loose operator
+
+const age = 18;
+
+if(age === 18) console.log('You just became an adult :D (strict)');
+
+if(age == 18) console.log('You just became an adult :D (loose)');
+
+prompt("What's your favorite number?");
+// const favoriteNumber = prompt("What's your favorite number?");
+const favoriteNumber = Number(prompt("What's your favorite number?"));
+console.log(favoriteNumber);
+console.log(typeof favoriteNumber);
+
+if(favoriteNumber === 23) { //23 === 23 -> FALSE
+    console.log('Cool! 23 is an amazing number!');
+}else if(favoriteNumber === 7) {
+    console.log('7 is also a cool number');
+}else {
+    console.log('Number is not 23 or 7');
 }
 
-// 0 = false;
-// '' = false;
-let height = 0;
-if (height) {
-    console.log('YAY! Height is defined');
-} else {
-    console.log('Height is UNDEFINED');
+if(favoriteNumber !== 23) console.log('Why not 23?');
+
+let woke = false;
+
+if(woke){
+    console.log('You will be the WINNER!');
+}else{
+    console.log('You are the LOOSER!'); 
 }
