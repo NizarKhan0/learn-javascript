@@ -450,3 +450,87 @@ if(hasDriversLicense && hasGoodVision && !isTired){
 }else{
     console.log('Someone else should drive...');
 }
+
+
+// LECTURE: Logical Operators
+// 1. Comment out the previous code so the prompt doesn't get in the way
+// 2. Let's say Sarah is looking for a new country to live in. She wants to live in a
+// country that speaks english, has less than 50 million people and is not an
+// island.
+// 3. Write an if statement to help Sarah figure out if your country is right for her.
+// You will need to write a condition that accounts for all of Sarah's criteria. Take
+// your time with this, and check part of the solution if necessary.
+// 4. If yours is the right country, log a string like this: 'You should live in Portugal :)'. If
+// not, log 'Portugal does not meet your criteria :('
+// 5. Probably your country does not meet all the criteria. So go back and temporarily
+// change some variables in order to make the condition true (unless you live in
+// Canada :D)
+
+
+let country = 'Malaysia';
+let language = 'English';
+let population = 35028031;
+let isIsland = false;
+
+if(language === 'English' && population < 50000000 && !isIsland){
+    console.log(`You should live in ${country} :D`);
+}else{
+    console.log(`${country} does not meet your criteria :(`);
+}
+
+//Coding challenge
+
+let dolphineScore = (96 + 108 + 89) / 3;
+let koalaScore = (88 + 91 + 110) / 3;
+
+if(dolphineScore > koalaScore){
+    console.log(`Dolphine wins with ${dolphineScore} points`);
+}else if(koalaScore > dolphineScore){
+    console.log(`Koala wins with ${koalaScore} points`);
+}else{
+    console.log('Draw');
+}
+
+
+
+//Switch statements
+
+
+const day = 'sunday'; // 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday';
+
+switch (day) {
+    case 'monday': // day === 'monday'
+        console.log('Plan course structure');
+        console.log('Go to coding meetup');
+        break;
+    case 'tuesday':
+        console.log('Prepare theory videos');
+        break;
+    case 'wednesday':
+    case 'thursday':
+        console.log('Write code examples');
+        break;
+    case 'friday':
+        console.log('Record videos');
+        break;
+    case 'saturday':
+    case 'sunday':
+        console.log('Enjoy the weekend :D');
+        break;
+    default:
+        console.log('Not a valid day!');
+}
+
+if (day === 'monday') {
+    console.log('Plan course structure');
+}else if (day === 'tuesday') {
+    console.log('Prepare theory videos');
+}else if (day === 'wednesday' || day === 'thursday'){
+    console.log('Write code examples');
+}else if (day === 'friday'){
+    console.log('Record videos');
+}else if (day === 'saturday' || day === 'sunday'){
+    console.log('Enjoy the weekend :D');
+}else{
+    console.log('Not a valid day!');
+}
