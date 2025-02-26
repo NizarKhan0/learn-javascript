@@ -9,7 +9,9 @@
 // const interface = 'Audio';
 // const private = 534;
 
-//function 
+//function
+
+/*
 
 function logger()
 {
@@ -38,3 +40,25 @@ console.log(appleJuice);
 const appleOrangeJuice = fruitProcessor(2, 4);
 console.log(appleOrangeJuice);
 // console.log(fruitProcessor(2, 4));
+
+*/
+
+// function declaration & function expression
+
+// function declaration (boleh letak variable sebelum / selepas function)
+
+const age1 = calAge1(2001);
+function calAge1(birthYear){
+    return 2025 - birthYear;
+}
+
+console.log(age1);
+
+// function expression
+
+const calAge2 = function (birthYear){
+    return 2025 - birthYear;
+}
+
+const age2 = calAge2(2001);
+console.log(age2);
