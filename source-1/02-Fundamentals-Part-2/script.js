@@ -47,18 +47,49 @@ console.log(appleOrangeJuice);
 
 // function declaration (boleh letak variable sebelum / selepas function)
 
-const age1 = calAge1(2001);
-function calAge1(birthYear){
-    return 2025 - birthYear;
-}
+// const age1 = calAge1(2001);
+// function calAge1(birthYear){
+//     return 2025 - birthYear;
+// }
 
-console.log(age1);
+// console.log(age1);
 
 // function expression
 
-const calAge2 = function (birthYear){
-    return 2025 - birthYear;
+// const calAge2 = function (birthYear){
+//     return 2025 - birthYear;
+// }
+
+// const age2 = calAge2(2001);
+// console.log(age2);
+
+//Arrow function
+
+// const calAge3 = birthYear => 2025 - birthYear;
+// const age3 = calAge3(2001);
+// console.log(age3);
+
+// const yearsUntilRetirement = (birthYear, firstName) => {
+//     const age = 2025 - birthYear;
+//     const retirement = 65 - age;
+//     // return retirement;
+//     return `${firstName} retires in ${retirement} years`;
+// }
+
+// console.log(yearsUntilRetirement(2001, 'Nizar'));
+
+//Function calling another function
+
+function cutFruitPieces(fruit) {
+    return fruit * 4;
 }
 
-const age2 = calAge2(2001);
-console.log(age2);
+function fruitProcessor(apples, oranges) {
+    const applePieces = cutFruitPieces(apples);
+    const orangePieces = cutFruitPieces(oranges);
+
+    const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of orange.`;
+    return juice;
+}
+
+console.log(fruitProcessor(2, 3));
