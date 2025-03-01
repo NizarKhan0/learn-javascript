@@ -97,21 +97,84 @@ console.log(appleOrangeJuice);
 
 //Review Functions
 
+// const calcAge = function (birthYear) {
+//     return 2025 - birthYear;
+// }
+
+// const yearsUntilRetirement = function (birthYear, firstName) {
+//     const age = calcAge(birthYear);
+//     const retirement = 65 - age;
+
+//     if (retirement > 0) {
+//         console.log(`${firstName} retires in ${retirement} years`);
+//         return retirement;
+//     } else {
+//         console.log(`${firstName} has already retired 🎉`);
+//         return -1;
+//     }
+// }
+
+// console.log(yearsUntilRetirement(2001, 'Nizar'));
+
+//Coding Challenge
+
+// const calAverage = (a, b, c) => (a + b + c) / 3;
+
+// console.log(calAverage(3, 6, 9));
+
+// const scoreDolphins = calAverage(44, 23, 71);
+// const scoreKoalas = calAverage(65, 54, 49);
+
+// const checkWinner = function (avgDolphins, avgKoalas) {
+//     if (avgDolphins >= 2 * avgKoalas) {
+//         console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
+//     } else if (avgDolphins < 2 * avgKoalas) {
+//         console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
+//     } else {
+//         console.log('No team wins...');
+//     }
+// }
+
+// checkWinner(scoreDolphins, scoreKoalas);
+
+// checkWinner(576, 111);
+
+
+//Intro to Arrays (sama je mcm PHP)
+
+// const friend1 = 'Michael';
+// const friend2 = 'Steven';
+// const friend3 = 'Peter';
+
+// const friends = ['Michael', 'Steven', 'Peter'];
+// console.log(friends);
+
+// const years = new Array(1991, 1984, 2008, 2020);
+
+// console.log(friends[0]);
+
+// console.log(friends[friends.length - 1]);
+
+// friends[2] = 'Jay';
+// console.log(friends);
+
+// const firstName = 'Nizar';
+// const nizar = [firstName, 'Muhammad', 2025 - 2001, 'teacher', friends];
+// console.log(nizar);
+// console.log(nizar.length);
+
+
+//Exercise
+
 const calcAge = function (birthYear) {
     return 2025 - birthYear;
 }
 
-const yearsUntilRetirement = function (birthYear, firstName) {
-    const age = calcAge(birthYear);
-    const retirement = 65 - age;
+const years = [1990, 1967, 2002, 2010, 2018];
 
-    if (retirement > 0) {
-        console.log(`${firstName} retires in ${retirement} years`);
-        return retirement;
-    } else {
-        console.log(`${firstName} has already retired 🎉`);
-        return -1;
-    }
-}
+const age1 = calcAge(years[0]);
+const age2 = calcAge(years[1]);
+const age3 = calcAge(years[years.length - 1]);
+const ages = [age1, age2, age3];
+console.log(ages);
 
-console.log(yearsUntilRetirement(2001, 'Nizar'));
