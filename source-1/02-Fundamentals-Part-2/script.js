@@ -181,6 +181,8 @@ console.log(appleOrangeJuice);
 
 //Basic Array
 
+/*
+
 //push method (add element to the end of the array)
 const friends = ['Michael', 'Steven', 'Peter'];
 const newLength = friends.push('Nizar');
@@ -235,6 +237,36 @@ const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
 const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 
 console.log(bills, tips, totals);
+
+*/
+
+//Intro to Objects
+
+const nizar = {
+    firstName: 'Nizar',
+    lastName: 'Muhammad',
+    age: 2025 - 2001,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven']
+};
+
+console.log(nizar.firstName);
+console.log(nizar['lastName']);
+const nameKey = 'Name';
+console.log(nizar['first' + nameKey]);
+console.log(nizar['last' + nameKey]);
+
+const interestedIn = prompt('What do you want to know about Nizar? Choose between firstName, lastName, age, job, and friends');
+
+if (nizar[interestedIn]) {
+    console.log(nizar[interestedIn]);
+} else {
+    console.log('Wrong request! Choose between firstName, lastName, age, job, and friends');
+}
+
+nizar.location = 'Malaysia';
+nizar['twitter'] = '@Nizar';
+console.log(nizar);
 
 
 
