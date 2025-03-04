@@ -242,6 +242,35 @@ console.log(bills, tips, totals);
 
 //Intro to Objects
 
+// const nizar = {
+//     firstName: 'Nizar',
+//     lastName: 'Muhammad',
+//     age: 2025 - 2001,
+//     job: 'teacher',
+//     friends: ['Michael', 'Peter', 'Steven']
+// };
+
+// console.log(nizar.firstName);
+// console.log(nizar['lastName']);
+// const nameKey = 'Name';
+// console.log(nizar['first' + nameKey]);
+// console.log(nizar['last' + nameKey]);
+
+// const interestedIn = prompt('What do you want to know about Nizar? Choose between firstName, lastName, age, job, and friends');
+
+// if (nizar[interestedIn]) {
+//     console.log(nizar[interestedIn]);
+// } else {
+//     console.log('Wrong request! Choose between firstName, lastName, age, job, and friends');
+// }
+
+// nizar.location = 'Malaysia';
+// nizar['twitter'] = '@Nizar';
+// console.log(nizar);
+
+
+//Dot vs. Bracket Notation
+
 const nizar = {
     firstName: 'Nizar',
     lastName: 'Muhammad',
@@ -250,23 +279,6 @@ const nizar = {
     friends: ['Michael', 'Peter', 'Steven']
 };
 
-console.log(nizar.firstName);
-console.log(nizar['lastName']);
-const nameKey = 'Name';
-console.log(nizar['first' + nameKey]);
-console.log(nizar['last' + nameKey]);
-
-const interestedIn = prompt('What do you want to know about Nizar? Choose between firstName, lastName, age, job, and friends');
-
-if (nizar[interestedIn]) {
-    console.log(nizar[interestedIn]);
-} else {
-    console.log('Wrong request! Choose between firstName, lastName, age, job, and friends');
-}
-
-nizar.location = 'Malaysia';
-nizar['twitter'] = '@Nizar';
-console.log(nizar);
-
+console.log(`${nizar.firstName} has ${nizar.friends.length} friends, and his best friend is called ${nizar.friends[0]}`);
 
 
