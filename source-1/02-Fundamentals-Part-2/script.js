@@ -271,14 +271,55 @@ console.log(bills, tips, totals);
 
 //Dot vs. Bracket Notation
 
+// const nizar = {
+//     firstName: 'Nizar',
+//     lastName: 'Muhammad',
+//     age: 2025 - 2001,
+//     job: 'teacher',
+//     friends: ['Michael', 'Peter', 'Steven']
+// };
+
+// console.log(`${nizar.firstName} has ${nizar.friends.length} friends, and his best friend is called ${nizar.friends[0]}`);
+
+
+//Object Methods
+
 const nizar = {
     firstName: 'Nizar',
     lastName: 'Muhammad',
-    age: 2025 - 2001,
+    birthYear: 2001,
     job: 'teacher',
-    friends: ['Michael', 'Peter', 'Steven']
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLicense: true,
+
+    // calAge: function (birthYear) {
+    //     return 2025 - birthYear;
+    // },
+
+    // calAge: function () {
+        // console.log(this);
+    //     return 2025 - this.birthYear;
+    // },
+
+    calAge: function () {
+        this.age = 2025 - this.birthYear;
+        return this.age;
+    },
+
+    getSummary: function () {
+        return `${this.firstName} is a ${this.calAge()}-year old ${this.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license`;
+    }
 };
 
-console.log(`${nizar.firstName} has ${nizar.friends.length} friends, and his best friend is called ${nizar.friends[0]}`);
+// console.log(nizar);
+// console.log(nizar.calAge());
+// console.log(nizar.age);
 
+
+// console.log(nizar.calAge(2001));
+// console.log(nizar['calAge'](2001));
+
+//Challenge
+// "Nizar is a 24-year old teacher, and he has a driver's license"
+console.log(nizar.getSummary());
 
