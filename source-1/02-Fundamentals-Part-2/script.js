@@ -367,6 +367,8 @@ if (mark.bmi > john.bmi) {
 
 //Iteration: The for Loop
 
+/*
+
 for (let rep = 1; rep <= 10; rep++) {
     // console.log(`Lifting weights repetition ${rep}`);
 }
@@ -421,4 +423,27 @@ for (let i = 0; i < nizar.length; i++) {
     console.log(nizar[i], typeof nizar[i]);
 }
 
+*/
 
+//Looping Backwards and Loops in Loops
+
+const nizar = [
+    'Nizar',
+    'Muhammad',
+    2025 - 2001,
+    'teacher',
+    ['Michael', 'Peter', 'Steven'],
+    true,
+];
+
+for (let i = nizar.length - 1; i >= 0; i--) {
+    console.log(i, nizar[i]);
+}
+
+for (let exercise = 1; exercise < 4; exercise++) {
+    console.log(`------ Starting exercise ${exercise}`);
+
+    for (let rep = 1; rep < 6; rep++) {
+        console.log(`Exercise ${exercise}: Lifting weight repetition ${rep}`);
+    }
+}
