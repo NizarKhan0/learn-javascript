@@ -284,6 +284,8 @@ console.log(bills, tips, totals);
 
 //Object Methods
 
+/*
+
 const nizar = {
     firstName: 'Nizar',
     lastName: 'Muhammad',
@@ -322,4 +324,101 @@ const nizar = {
 //Challenge
 // "Nizar is a 24-year old teacher, and he has a driver's license"
 console.log(nizar.getSummary());
+
+
+
+//Coding Challenge
+
+
+
+const mark = {
+    fullName: 'Mark Miller',
+    mass: 78,
+    height: 1.69,
+    calcBMI: function () {
+        this.bmi = this.mass / this.height ** 2;
+        return this.bmi;
+    }
+};
+
+const john = {
+    fullName: 'John Smith',
+    mass: 92,
+    height: 1.95,
+    calcBMI: function () {
+        this.bmi = this.mass / this.height ** 2;
+        return this.bmi;
+    }
+};
+
+mark.calcBMI();
+john.calcBMI();
+
+console.log(mark.bmi, john.bmi);
+
+if (mark.bmi > john.bmi) {
+    console.log(`${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s BMI (${john.bmi})`);
+} else if (john.bmi > mark.bmi) {
+    console.log(`${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s BMI (${mark.bmi})`);
+}
+
+*/
+
+
+//Iteration: The for Loop
+
+for (let rep = 1; rep <= 10; rep++) {
+    // console.log(`Lifting weights repetition ${rep}`);
+}
+
+//Looping Arrays, Breaking and Continuing
+
+const nizar = [
+    'Nizar',
+    'Muhammad',
+    2025 - 2001,
+    'teacher',
+    ['Michael', 'Peter', 'Steven'],
+    true
+];
+
+const types = [];
+
+for (let i = 0; i < nizar.length; i++) {
+    //reading from nizar array
+    console.log(nizar[i], typeof nizar[i]);
+
+    //filling types array
+    // types[i] = typeof nizar[i];
+
+    types.push(typeof nizar[i]);
+}
+
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+    ages.push(2025 - years[i]);
+}
+
+console.log(ages);
+
+//continue and break
+
+console.log('--- ONLY STRINGS ---');
+for (let i = 0; i < nizar.length; i++) {
+    if (typeof nizar[i] !== 'string') continue;
+
+    console.log(nizar[i], typeof nizar[i]);
+}
+
+console.log('--- BREAK WITH NUMBER ---');
+for (let i = 0; i < nizar.length; i++) {
+    if (typeof nizar[i] === 'number') break;
+
+    console.log(nizar[i], typeof nizar[i]);
+}
+
 
