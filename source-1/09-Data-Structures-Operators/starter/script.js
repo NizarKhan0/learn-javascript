@@ -51,7 +51,12 @@ const restaurant = {
 
   orderDelivery: function({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
     console.log(`Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`);
-  }
+  },
+
+  orderPasta: function(ing1, ing2, ing3) {
+    console.log(`Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}.`);
+  },
+
 };
 
 restaurant.orderDelivery({
@@ -60,6 +65,52 @@ restaurant.orderDelivery({
   mainIndex: 2,
   starterIndex: 2
 });
+
+//The spread operator
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
+
+const newArr = [1, 2, ...arr];
+console.log(newArr);
+
+console.log(...newArr);
+console.log(1, 2, 7, 8, 9);
+
+const newMenu = [...restaurant.mainMenu, 'Gnocchi'];
+console.log(newMenu);
+
+//copy array
+const mainMenuCopy = [...restaurant.mainMenu];
+
+//join 2 arrays
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(menu);
+
+//iterables: arrays, strings, maps, sets. NOT objects
+const str = 'Nizar';
+const letters = [...str, ' ', 'A.'];
+console.log(letters);
+console.log(...str);
+// console.log(`${...str} Nizar`);
+
+const ingredients = [
+  prompt("Let's make pasta! Ingredient 1?"),
+  prompt("Ingredient 2?"),
+  prompt("Ingredient 3?"),
+];
+console.log(ingredients);
+
+restaurant.orderPasta(...ingredients);
+restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+
+//objects
+const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Nizar' };
+console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Ristorante Roma';
+console.log(restaurantCopy.name);
 
 //destructuring arrays
 
@@ -105,6 +156,7 @@ console.log(p, q, r);
 
 //destructuring objects
 
+/*
 const { name, openingHours, categories } = restaurant;
 console.log(name, openingHours, categories);
 
@@ -125,3 +177,4 @@ console.log(a, b);
 //nested objects
 const { fri: { open, close } } = openingHours;
 console.log(open, close);
+*/
