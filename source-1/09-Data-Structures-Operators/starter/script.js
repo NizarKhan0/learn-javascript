@@ -261,3 +261,40 @@ console.log(guestCount);
 //Nullish: null and undefined (NOT 0 or '')
 const guestCount2 = restaurant.numGuests ?? 10;
 console.log(guestCount2);
+
+//Logical Assignment Operators
+const rest1 = {
+  name: 'Capri',
+  // numGuests: 20,
+  numGuests: 0,
+};
+
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Giovanni Rossi',
+};
+
+// OR assignment
+//rest1.numGuests = rest1.numGuests || 10;
+//rest2.numGuests = rest2.numGuests || 10;
+//rest1.numGuests ||= 10;
+//rest2.numGuests ||= 10;
+
+//nullish assignment operator (null or undefined)
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+// rest1.owner = rest1.owner ?? 'Anonymous';
+// rest2.owner = rest2.owner ?? 'Anonymous';
+rest1.owner &&= 'Anonymous';
+rest2.owner &&= 'Anonymous';
+
+console.log(rest1);
+console.log(rest2);
+
+// const newRest = { ...rest1, ...rest2, owner: 'Nizar' };
+// console.log(newRest);
+
+//Nullish assignment
+// const newRest2 = { ...rest1, ...rest2 };
+// console.log(newRest2);
