@@ -48,8 +48,33 @@ const restaurant = {
   },
 };
 
+//Sets
+
+const orderSet = new Set(['Pasta', 'Pizza', 'Pizza', 'Risotto', 'Pasta', 'Pizza']);
+console.log(orderSet);
+
+console.log(new Set('Nizar'));
+
+console.log(orderSet.size);
+console.log(orderSet.has('Pizza'));
+console.log(orderSet.has('Bread'));
+orderSet.add('Garlic Bread');
+orderSet.delete('Pizza');
+// orderSet.clear();
+console.log(orderSet);
+
+for (const order of orderSet) console.log(order);
+
+//Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+console.log(new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size);
+console.log(new Set('nizar').size);
+
 //Looping Objects: Object Keys, Values
 
+/*
 const properties = Object.keys(openingHours);
 console.log(properties);
 
@@ -75,7 +100,7 @@ console.log(entries);
 for (const [day, { open, close }] of entries) {
   console.log(`On ${day} we open at ${open} and close at ${close}`);
 }
-
+*/
 
 /*
 ///////////////////////////////////////
@@ -715,7 +740,4 @@ console.log(users[0]?.name ?? 'User array empty');
 if(users.length > 0) console.log(users[0].name);
 else console.log('user array empty');
 */
-
-
-
 
