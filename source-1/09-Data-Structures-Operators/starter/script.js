@@ -48,6 +48,35 @@ const restaurant = {
   },
 };
 
+//Looping Objects: Object Keys, Values
+
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+console.log(`We are open on ${properties.length} days: `);
+
+let openStr = `We are open on ${properties.length} days: `;
+
+for (const day of properties) {
+  // console.log(day);
+  openStr += `${day}, `;
+}
+
+console.log(openStr);
+
+// Property VALUES
+const values = Object.values(openingHours);
+console.log(values);
+
+//Entire object
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+for (const [day, { open, close }] of entries) {
+  console.log(`On ${day} we open at ${open} and close at ${close}`);
+}
+
+
 /*
 ///////////////////////////////////////
 // String Methods Practice
@@ -644,7 +673,7 @@ console.log(users[0]?.name ?? 'User array empty');
 
 if (users.length > 0) console.log(users[0].name);
 else console.log('user array empty');
-*/
+
 
 
 ///////////////////////////////////////
@@ -685,3 +714,8 @@ console.log(users[0]?.name ?? 'User array empty');
 
 if(users.length > 0) console.log(users[0].name);
 else console.log('user array empty');
+*/
+
+
+
+
