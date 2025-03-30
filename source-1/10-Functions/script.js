@@ -205,3 +205,28 @@ const addTaxRate = function(rate){
 const addVAT2 = addTaxRate(0.23);
 console.log(addVAT2(100));
 console.log(addVAT2(23));
+
+//Immediately invoke function express (IIFE)
+
+const runOnce = function () {
+console.log('This will never run again');
+};
+runOnce();
+
+// IIFE
+(function () {
+  console.log('This will never run again');
+  const isPrivate = 23;
+})();
+
+//console.log(isPrivate); // ReferenceError: isPrivate is not defined
+
+(() => console.log('This will also never run again'))();
+
+{
+  const isPrivate = 23;
+  var notPrivate = 46;
+}
+
+//console.log(isPrivate)
+console.log(notPrivate); // 46
