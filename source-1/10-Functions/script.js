@@ -4,11 +4,9 @@
 const bookings = [];
 
 const createBooking = function (flightNum, numPassengers = 1, price = 199) {
-
-    // ES6 Default Parameters
-    // numPassengers = numPassengers || 1;
-    // price = price || 199;
-
+  // ES6 Default Parameters
+  // numPassengers = numPassengers || 1;
+  // price = price || 199;
 
   const booking = {
     flightNum,
@@ -45,14 +43,13 @@ const checkIn = function (flightNum, passenger) {
 console.log(flight);
 console.log(nizar);
 
-
 // Is the same as doing...
 // const flightNum = flight;
 // const passenger = nizar;
 
 const newPassport = function (person) {
   person.passport = Math.trunc(Math.random() * 100000000000);
-}
+};
 
 // newPassport(nizar);
 // checkIn(flight, nizar);
@@ -61,12 +58,12 @@ const newPassport = function (person) {
 
 const oneWord = function (str) {
   return str.replace(/ /g, '').toLowerCase();
-}
+};
 
 const upperFirstWord = function (str) {
   const [first, ...others] = str.split(' ');
   return [first.toUpperCase(), ...others].join(' ');
-}
+};
 
 // Higher-order function
 
@@ -75,7 +72,7 @@ const transformer = function (str, fn) {
   console.log(`Transformed String: ${fn(str)}`);
 
   console.log(`Transformed by: ${fn.name}`);
-}
+};
 
 transformer('JavaScript is the best!', upperFirstWord);
 transformer('JavaScript is the best!', oneWord);
@@ -88,9 +85,7 @@ document.body.addEventListener('click', high5);
 
 ['Nizar', 'Khan', 'JavaScript'].forEach(high5);
 
-
 // Functions Returning Functions
-
 
 /*
 const greet = function (greeting) {
@@ -111,7 +106,6 @@ greetArr('Hello')('Nizar');
 
 */
 
-
 //The call and apply method
 
 const lufthansa = {
@@ -120,7 +114,9 @@ const lufthansa = {
   bookings: [],
   // book: function () {}
   book(flightNum, name) {
-    console.log(`${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`);
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
     this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
   },
 };
@@ -162,7 +158,6 @@ console.log(swiss.bookings);
 
 book.call(swiss, ...flightData);
 
-
 //Bind method
 //book.call(eurowings, 23, 'Sarah Williams');
 
@@ -184,11 +179,13 @@ lufthansa.buyPlane = function () {
   this.planes++;
   console.log(this.planes);
 };
-document.querySelector('.buy').addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+document
+  .querySelector('.buy')
+  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
 
 // Partial Application
 const addTax = (rate, value) => value + value * rate;
-console.log(addTax(0.10, 200));
+console.log(addTax(0.1, 200));
 
 const addVAT = addTax.bind(null, 0.23);
 // addVAT = value => value + value * 0.23;
@@ -196,11 +193,11 @@ const addVAT = addTax.bind(null, 0.23);
 console.log(addVAT(100));
 console.log(addVAT(23));
 
-const addTaxRate = function(rate){
-  return function(value){
+const addTaxRate = function (rate) {
+  return function (value) {
     return value + value * rate;
-  }
-}
+  };
+};
 
 const addVAT2 = addTaxRate(0.23);
 console.log(addVAT2(100));
@@ -209,7 +206,7 @@ console.log(addVAT2(23));
 //Immediately invoke function express (IIFE)
 
 const runOnce = function () {
-console.log('This will never run again');
+  console.log('This will never run again');
 };
 runOnce();
 
@@ -231,7 +228,6 @@ runOnce();
 //console.log(isPrivate)
 console.log(notPrivate); // 46
 
-
 //Closures
 const secureBooking = function () {
   let passengerCount = 0;
@@ -249,3 +245,42 @@ booker(); // 2 passengers
 booker(); // 3 passengers
 
 console.dir(booker); // [Function (anonymous)]
+
+let f;
+
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 2);
+  };
+};
+
+const h = function () {
+  const b = 777;
+  f = function () {
+    console.log(b * 2);
+  };
+};
+
+g();
+h();
+
+//Re assigning f function
+h();
+f();
+console.dir(f); // [Function (anonymous)]
+
+//Example 2
+
+const boardPassengers = function (n, wait) {
+  const perGroup = n / 3;
+
+  setTimeout(function () {
+    console.log(`We are now boarding all ${n} passengers`);
+    console.log(`There are 3 groups, each with ${perGroup} passengers`);
+  }, wait * 1000);
+
+  console.log(`Will start boarding in ${wait} seconds`);
+};
+
+boardPassengers(180, 3);
