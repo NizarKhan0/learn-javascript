@@ -192,20 +192,44 @@ btnTransfer.addEventListener('click', function (e) {
   }
 });
 
-btnLoan.addEventListener('click', function (e) {
+btnClose.addEventListener('click', function (e) {
   e.preventDefault();
 
-  const amount = Number(inputLoanAmount.value);
+  // console.log('Delete account');
 
-  if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
-    // Add movement
-    currentAccount.movements.push(amount);
-
-    // Update UI
-    updateUI(currentAccount);
+  if (
+    inputCloseUsername.value === currentAccount.username &&
+    Number(inputClosePin.value) === currentAccount.pin
+  ) {
+    const index = accounts.findIndex(
+      acc => acc.username === currentAccount.username
+    );
+    // .indexOf(23)
+    console.log(index);
+    // Delete account
+    accounts.splice(index, 1);
+    console.log(accounts);
+    // Hide UI
+    containerApp.style.opacity = 0;
+    labelWelcome.textContent = 'Log in to get started';
+    inputCloseUsername.value = inputClosePin.value = '';
   }
-  inputLoanAmount.value = '';
 });
+
+// btnLoan.addEventListener('click', function (e) {
+//   e.preventDefault();
+
+//   const amount = Number(inputLoanAmount.value);
+
+//   if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
+//     // Add movement
+//     currentAccount.movements.push(amount);
+
+//     // Update UI
+//     updateUI(currentAccount);
+//   }
+//   inputLoanAmount.value = '';
+// });
 
 let sorted = false;
 btnSort.addEventListener('click', function (e) {
