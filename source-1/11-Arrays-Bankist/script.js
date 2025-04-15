@@ -192,6 +192,26 @@ btnTransfer.addEventListener('click', function (e) {
   }
 });
 
+
+btnLoan.addEventListener('click', function (e) {
+
+  // console.log('Requesting loan');
+  e.preventDefault();
+
+  const amount = Number(inputLoanAmount.value);
+  if (
+    amount > 0 &&
+    currentAccount.movements.some(mov => mov >= amount * 0.1)
+  ) {
+    // Add movement
+    currentAccount.movements.push(amount);
+
+    // Update UI
+    updateUI(currentAccount);
+  }
+  inputLoanAmount.value = '';
+});
+
 btnClose.addEventListener('click', function (e) {
   e.preventDefault();
 
@@ -216,20 +236,6 @@ btnClose.addEventListener('click', function (e) {
   }
 });
 
-// btnLoan.addEventListener('click', function (e) {
-//   e.preventDefault();
-
-//   const amount = Number(inputLoanAmount.value);
-
-//   if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
-//     // Add movement
-//     currentAccount.movements.push(amount);
-
-//     // Update UI
-//     updateUI(currentAccount);
-//   }
-//   inputLoanAmount.value = '';
-// });
 
 let sorted = false;
 btnSort.addEventListener('click', function (e) {
@@ -546,3 +552,25 @@ console.log(accounts);
 const account = accounts.find(acc => acc.owner === 'Jessica Davis');
 console.log(account);
 
+//some and every
+console.log(movements);
+
+// Equality
+console.log(movements.includes(-130)); // true
+
+// Some - Condition
+movements.some(mov => mov === -130); // true
+console.log(movements.some(mov => mov === -130)); // true
+
+const anyDeposits = movements.some(mov => mov > 0); // true
+console.log(anyDeposits);
+
+// Every - Condition
+console.log(movements.every(mov => mov > 0)); // false
+console.log(account4.movements.every(mov => mov > 0)); // true
+
+// Separate callback
+const deposit = mov => mov > 0;
+console.log(movements.some(deposit)); // true
+console.log(movements.every(deposit)); // true
+console.log(movements.filter(deposit)); // true
