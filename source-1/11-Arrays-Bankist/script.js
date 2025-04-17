@@ -236,7 +236,7 @@ btnClose.addEventListener('click', function (e) {
   }
 });
 
-
+// Sorting
 let sorted = false;
 btnSort.addEventListener('click', function (e) {
   e.preventDefault();
@@ -606,3 +606,15 @@ const overallBalance3 = accounts
   .flatMap(acc => acc.movements)
   .reduce((acc, mov) => acc + mov, 0);
 console.log(overallBalance3); // 10840
+
+//Sorting Arrays
+
+//strings
+const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
+console.log(owners.sort()); // ['Adam', 'Jonas', 'Martha', 'Zach']
+
+//numbers
+console.log(movements); // [200, 450, -400, 3000, -650, -130, 70, 1300]
+console.log(movements.sort()); // [-130, -200, -400, -650, 200, 3000, 450, 70]
+console.log(movements.sort((a, b) => a - b)); // [-650, -400, -130, 70, 200, 450, 3000]
+console.log(movements.sort((a, b) => b - a)); // [3000, 450, 200, 70, -130, -400, -650]
