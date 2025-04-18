@@ -618,3 +618,28 @@ console.log(movements); // [200, 450, -400, 3000, -650, -130, 70, 1300]
 console.log(movements.sort()); // [-130, -200, -400, -650, 200, 3000, 450, 70]
 console.log(movements.sort((a, b) => a - b)); // [-650, -400, -130, 70, 200, 450, 3000]
 console.log(movements.sort((a, b) => b - a)); // [3000, 450, 200, 70, -130, -400, -650]
+
+//creating and filling arrays
+
+const x = new Array(7); // [empty × 7]
+console.log(x); // [empty × 7]
+console.log(x.map(() => 5)); // [empty × 7]
+console.log(x.fill(1)); // [1, 1, 1, 1, 1, 1, 1]
+console.log(x.fill(1, 3)); // [empty × 3, 1, 1, 1, 1]
+console.log(x.fill(1, 3, 5)); // [empty × 3, 1, 1, empty × 2]
+const y = Array.from({ length: 7 }, () => 1); // [1, 1, 1, 1, 1, 1, 1]
+console.log(arr); // [1, 1, 1, 1, 1, 1, 1]
+console.log(arr.fill(1)); // [1, 1, 1, 1, 1, 1, 1]
+console.log(arr.fill(1, 3)); // [empty × 3, 1, 1, 1, 1]
+console.log(arr.fill(1, 3, 5)); // [empty × 3, 1, 1, empty × 2]
+
+labelBalance.addEventListener('click', function () {
+  const movementsUI = Array.from(
+    document.querySelectorAll('.movements__value'),
+    el => Number(el.textContent.replace('€', ''))
+  );
+  console.log(movementsUI);
+
+  const movementsUI2 = [...document.querySelectorAll('.movements__value')];
+  console.log(movementsUI2);
+});
