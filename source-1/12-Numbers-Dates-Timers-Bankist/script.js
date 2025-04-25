@@ -328,6 +328,8 @@ console.log(+(2.345).toFixed(3)); // 2.345
 
 //The Remainder Operator
 
+/*
+
 console.log(5 % 2); // 1
 console.log(5 / 2); // 2.5
 
@@ -358,3 +360,22 @@ labelBalance.addEventListener('click', function () {
     }
   });
 });
+
+*/
+
+// Numeric Separators
+
+const diameter = 287_460_000_000; // 287460000000
+console.log(diameter); // 287460000000
+
+const price = 345_99; // 34599
+console.log(price); // 34599
+
+const transferFee1 = 15_00; // 1500
+const transferFee2 = 1_500; // 1500
+
+const PI = 3.14_15; // 3.1415
+console.log(PI); // 3.1415
+
+console.log(Number('230_000')); // NaN
+console.log(parseInt('230_000')); // 230
