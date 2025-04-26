@@ -365,6 +365,7 @@ labelBalance.addEventListener('click', function () {
 
 // Numeric Separators
 
+/*
 const diameter = 287_460_000_000; // 287460000000
 console.log(diameter); // 287460000000
 
@@ -379,3 +380,37 @@ console.log(PI); // 3.1415
 
 console.log(Number('230_000')); // NaN
 console.log(parseInt('230_000')); // 230
+*/
+
+// Bigint
+
+console.log(2 ** 52 -1);
+console.log(Number.MAX_SAFE_INTEGER); // 9007199254740991
+console.log(2 ** 53 * 1); // 9007199254740992
+console.log(2 ** 53 + 2); // 9007199254740994
+console.log(2 ** 53 + 3); // 9007199254740996
+console.log(2 ** 53 + 4); // 9007199254740992
+console.log(2 ** 53 - 1); // 9007199254740992
+
+console.log(32432432432432432434324332432432423423n); // 32432432432432432434324332432432423423n
+console.log(BigInt(324234324));
+
+//operations
+
+console.log(10000n + 10000n);
+console.log(32423423432423432423432432423432432423n + 10000n);
+
+const huge = 20324324324234324324324n;
+const num = 23;
+console.log(huge * BigInt(num));
+
+console.log(20n > 15);
+console.log(20n === 20);
+console.log(typeof 20n); // bigint
+console.log(20n == '20'); // true
+
+console.log(huge + ' is REALY big!!!');
+
+//Divisions
+console.log(10n / 3n); // 3n
+console.log(10 / 3); // 3.3333333333333335
