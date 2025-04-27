@@ -384,6 +384,8 @@ console.log(parseInt('230_000')); // 230
 
 // Bigint
 
+/*
+
 console.log(2 ** 52 -1);
 console.log(Number.MAX_SAFE_INTEGER); // 9007199254740991
 console.log(2 ** 53 * 1); // 9007199254740992
@@ -414,3 +416,40 @@ console.log(huge + ' is REALY big!!!');
 //Divisions
 console.log(10n / 3n); // 3n
 console.log(10 / 3); // 3.3333333333333335
+
+*/
+
+
+//Create a date
+
+const now = new Date();
+console.log(now);
+
+console.log(new Date('Aug 02 2020 18:05:41'));
+console.log(new Date('December 24, 2024'));
+console.log(new Date(account1.movementsDates[0]));
+
+console.log(new Date(2037, 10, 19, 15, 23, 5));
+console.log(new Date(2037, 10, 31)); // 31st of October
+
+console.log(new Date(0)); // 1st of January 1970
+console.log(new Date(3 * 24 * 60 * 60 * 1000)); // 3 days in milliseconds
+
+//Working with dates
+const future = new Date(2037, 10, 19, 15, 23, 5);
+console.log(future);
+console.log(future.getFullYear()); // 2037
+console.log(future.getMonth()); // 10
+console.log(future.getDate()); // 19
+console.log(future.getDay()); // 0
+console.log(future.getHours()); // 15
+console.log(future.getMinutes()); // 23
+console.log(future.getSeconds()); // 5
+console.log(future.toISOString()); // 2037-11-19T15:23:05.000Z
+console.log(future.getTime()); // 2142241385000
+console.log(new Date(2142241385000)); // 2037-11-19T15:23:05.000Z
+console.log(Date.now()); // 1690845363194
+console.log(new Date(1690845363194)); // 2023-07-31T13:56:03.194Z
+console.log(future.getTime() - Date.now()); // 2142241385000 - 1690845363194
+console.log(Math.abs(future.getTime() - Date.now())); // 452196021806
+
