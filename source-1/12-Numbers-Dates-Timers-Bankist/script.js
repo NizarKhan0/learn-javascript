@@ -98,6 +98,7 @@ const formatMovementDate = function (date, locale) {
   // const month = `${date.getMonth() + 1}`.padStart(2, 0);
   // const year = date.getFullYear();
   // return `${day}/${month}/${year}`;
+  // internationalizing API
   return new Intl.DateTimeFormat(locale).format(date);
 };
 
@@ -123,6 +124,7 @@ const displayMovements = function (acc, sort = false) {
     const type = movement > 0 ? 'deposit' : 'withdrawal';
 
     const date = new Date(movementDate);
+    // internationalizing API
     const displayDate = formatMovementDate(date, acc.locale);
 
     const formattedMov = formatCur(movement, acc.locale, acc.currency);
@@ -244,6 +246,8 @@ btnLogin.addEventListener('click', function (e) {
     }`;
     containerApp.style.opacity = 100;
 
+    //Experimental API
+    //internationalizing API
     // Create current date and time
     const now = new Date();
     const options = {
@@ -257,6 +261,7 @@ btnLogin.addEventListener('click', function (e) {
     // const locale = navigator.language;
     // console.log(locale);
 
+    //internationalizing API
     labelDate.textContent = new Intl.DateTimeFormat(
       currentAccount.locale,
       options
@@ -595,9 +600,9 @@ const calcDaysPassed = (date1, date2) =>
 const days1 = calcDaysPassed(new Date(2037, 3, 4), new Date(2037, 3, 14));
 console.log(days1);
 
-*/
 
 // Operations with dates
+
 const future = new Date(2037, 10, 19, 15, 23);
 console.log(+future);
 
@@ -606,3 +611,6 @@ const calcDaysPassed = (date1, date2) =>
 
 const days1 = calcDaysPassed(new Date(2037, 3, 4), new Date(2037, 3, 14));
 console.log(days1);
+
+*/
+
