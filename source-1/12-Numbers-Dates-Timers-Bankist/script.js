@@ -326,6 +326,8 @@ btnLoan.addEventListener('click', function (e) {
   const amount = Math.floor(inputLoanAmount.value);
 
   if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
+
+    //setTimeout is used to simulate a delay in the loan approval process
     setTimeout(function () {
       // Add movement
       currentAccount.movements.push(amount);
@@ -614,7 +616,6 @@ const calcDaysPassed = (date1, date2) =>
 const days1 = calcDaysPassed(new Date(2037, 3, 4), new Date(2037, 3, 14));
 console.log(days1);
 
-*/
 
 // Internationalizing Numbers
 const num = 38884764.23;
@@ -630,3 +631,28 @@ console.log('India: ', new Intl.NumberFormat('en-IN').format(num));
 console.log('Germany: ', new Intl.NumberFormat('de-DE').format(num));
 console.log('Syria: ', new Intl.NumberFormat('ar-SY').format(num));
 console.log('Browser: ', new Intl.NumberFormat(navigator.language).format(num));
+
+*/
+
+// timers setTimeout and setInterval
+
+const ingredients = ['olives', 'spinach'];
+
+const pizzaTimer = setTimeout(
+  (ing1, ing2) => console.log(`Here is your pizza with ${ing1} and ${ing2}🍕`),
+  3000,
+  ...ingredients
+);
+console.log('Waiting...');
+
+if (ingredients.includes('spinach')) {
+  clearTimeout(pizzaTimer);
+  console.log('Cancelled pizza order!');
+}
+
+// setInterval
+setInterval(() => console.log('ping'), 1000);
+setInterval(() => {
+  const now = new Date();
+  console.log(now);
+}, 1000);
