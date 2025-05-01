@@ -102,6 +102,7 @@ const formatMovementDate = function (date, locale) {
   return new Intl.DateTimeFormat(locale).format(date);
 };
 
+// internationalizing numbers
 const formatCur = function (value, locale, currency) {
   return new Intl.NumberFormat(locale, {
     style: 'currency',
@@ -127,6 +128,7 @@ const displayMovements = function (acc, sort = false) {
     // internationalizing API
     const displayDate = formatMovementDate(date, acc.locale);
 
+    //internationalizing numbers
     const formattedMov = formatCur(movement, acc.locale, acc.currency);
 
     const html = `
@@ -614,3 +616,17 @@ console.log(days1);
 
 */
 
+// Internationalizing Numbers
+const num = 38884764.23;
+
+const options = {
+  style: 'unit',
+  unit: 'mile-per-hour',
+  currency: 'EUR',
+};
+
+console.log('US: ', new Intl.NumberFormat('en-US').format(num));
+console.log('India: ', new Intl.NumberFormat('en-IN').format(num));
+console.log('Germany: ', new Intl.NumberFormat('de-DE').format(num));
+console.log('Syria: ', new Intl.NumberFormat('ar-SY').format(num));
+console.log('Browser: ', new Intl.NumberFormat(navigator.language).format(num));
