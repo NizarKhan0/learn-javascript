@@ -194,6 +194,8 @@ const updateUI = function (acc) {
   calcDisplaySummary(acc);
 };
 
+
+// Implementing a countdown timer
 const startLogOutTimer = function () {
   const tick = function () {
     const min = String(Math.trunc(time / 60)).padStart(2, 0);
@@ -214,7 +216,7 @@ const startLogOutTimer = function () {
   };
 
   // Set time to 5 minutes
-  let time = 120;
+  let time = 60;
 
   // Call the timer every second
   tick();
@@ -280,6 +282,7 @@ btnLogin.addEventListener('click', function (e) {
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
 
+    // Clear timer (implementing a countdown timer)
     // Timer
     if (timer) clearInterval(timer);
     timer = startLogOutTimer();
@@ -327,6 +330,7 @@ btnLoan.addEventListener('click', function (e) {
 
   if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
 
+    // implementing a delay countdown timer
     //setTimeout is used to simulate a delay in the loan approval process
     setTimeout(function () {
       // Add movement
