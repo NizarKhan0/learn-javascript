@@ -33,6 +33,7 @@ document.addEventListener('keydown', function (e) {
 
 // Selecting, Creating, and Deleting Elements
 
+
 // Selecting elements
 console.log(document.documentElement);
 console.log(document.head);
@@ -69,3 +70,56 @@ document
     // message.remove();
     message.parentElement.removeChild(message);
   });
+
+
+// Styles, Attributes and Classes
+
+// Styles
+message.style.backgroundColor = '#37383d';
+message.style.width = '120%';
+
+console.log(message.style.height);
+console.log(message.style.backgroundColor);
+
+//computed to get all real CSS properties
+console.log(getComputedStyle(message).color);
+console.log(getComputedStyle(message).height);
+
+message.style.height =
+  Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
+console.log(getComputedStyle(message).height);
+document.documentElement.style.setProperty('--color-primary', 'orangered');
+
+// Attributes
+
+//can access attributes
+const logo = document.querySelector('.nav__logo');
+console.log(logo.alt);
+console.log(logo.src);
+console.log(logo.className);
+
+logo.alt = 'Beautiful minimalist logo';
+
+// Non-standard
+console.log(logo.designer); // undefined
+console.log(logo.getAttribute('designer')); // undefined
+logo.setAttribute('company', 'Bankist');
+
+console.log(logo.src);
+console.log(logo.getAttribute('src'));
+
+const link = document.querySelector('.twitter-link');
+console.log(link.href);
+console.log(link.getAttribute('href'));
+
+// Data attributes
+console.log(logo.dataset.versionNumber);
+
+// Classes
+logo.classList.add('new-class');
+logo.classList.remove('new-class');
+logo.classList.toggle('new-class');
+logo.classList.contains('new-class');
+
+// Don't use
+logo.className = 'new-class'; // overwrite all classes
