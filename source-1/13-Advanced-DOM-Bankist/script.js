@@ -7,9 +7,6 @@ const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 const btnScrollTo = document.querySelector('.btn--scroll-to');
 const section1 = document.querySelector('#section--1');
 const nav = document.querySelector('.nav');
-const tabs = document.querySelectorAll('.operations__tab');
-const tabsContainer = document.querySelector('.operations__tab-container');
-const tabsContent = document.querySelectorAll('.operations__content');
 
 ///////////////////////////////////////
 // Modal window
@@ -92,6 +89,7 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
   }
 });
 
+
 // DOM traversing
 const h1 = document.querySelector('h1');
 
@@ -123,13 +121,33 @@ console.log(h1.parentElement.children);
 });
 
 
-
-
-
 ///////////////////////////////////////
 // Tabbed component
 
+const tabs = document.querySelectorAll('.operations__tab');
+const tabsContainer = document.querySelector('.operations__tab-container');
+const tabsContent = document.querySelectorAll('.operations__content');
 
+tabsContainer.addEventListener('click', function (e) {
+  const clicked = e.target.closest('.operations__tab');
+
+  console.log(clicked);
+
+  // Guard clause
+  if (!clicked) return;
+
+  // Remove active classes
+  tabs.forEach(t => t.classList.remove('operations__tab--active'));
+  tabsContent.forEach(c => c.classList.remove('operations__content--active'));
+  // Activate tab
+  clicked.classList.add('operations__tab--active');
+  // Activate content area
+  const dataTab = clicked.getAttribute('data-tab');
+  console.log(dataTab);
+  document
+    .querySelector(`.operations__content--${dataTab}`)
+    .classList.add('operations__content--active');
+});
 
 ///////////////////////////////////////
 // Menu fade animation
