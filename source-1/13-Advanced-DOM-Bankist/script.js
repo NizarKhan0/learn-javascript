@@ -89,6 +89,7 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
   }
 });
 
+/*
 
 // DOM traversing
 const h1 = document.querySelector('h1');
@@ -120,6 +121,7 @@ console.log(h1.parentElement.children);
   if (el !== h1) el.style.transform = 'scale(0.5)';
 });
 
+*/
 
 ///////////////////////////////////////
 // Tabbed component
@@ -152,6 +154,25 @@ tabsContainer.addEventListener('click', function (e) {
 ///////////////////////////////////////
 // Menu fade animation
 
+const handleHover = function (e) {
+  // console.log(this);
+  // console.log(e.target);
+  // console.log(e.currentTarget);
+  if (e.target.classList.contains('nav__link')) {
+    const link = e.target;
+    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+    const logo = link.closest('.nav').querySelector('img');
+
+    siblings.forEach(el => {
+      if (el !== link) el.style.opacity = this;
+    });
+    logo.style.opacity = this;
+  }
+};
+
+// Passing "argument" into handler
+nav.addEventListener('mouseover', handleHover.bind(0.5));
+nav.addEventListener('mouseout', handleHover.bind(1));
 
 
 // Passing "argument" into handler
