@@ -225,7 +225,7 @@ const navHeight = nav.getBoundingClientRect().height;
 
 const stickyNav = function (entries) {
   const entry = entries[0];
-  console.log(entry);
+  // console.log(entry);
   //ini utk sticky nav dia
   if (!entry.isIntersecting) nav.classList.add('sticky');
   else nav.classList.remove('sticky');
@@ -241,7 +241,29 @@ const headerObserver = new IntersectionObserver(stickyNav, {
 headerObserver.observe(header);
 ///////////////////////////////////////
 // Reveal sections
+const allSections = document.querySelectorAll('.section');
+// console.log(allSections);
 
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
+  console.log(entry);
+
+  if (!entry.isIntersecting) return;
+  entry.target.classList.remove('section--hidden');
+  //utk stopkan observer bila section dah reveal
+  observer.unobserve(entry.target);
+  // console.log(entry.target);
+};
+
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.15,
+});
+
+allSections.forEach(function (section) {
+  sectionObserver.observe(section);
+  section.classList.add('section--hidden');
+});
 
 // Lazy loading images
 
