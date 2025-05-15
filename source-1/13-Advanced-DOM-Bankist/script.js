@@ -177,6 +177,7 @@ nav.addEventListener('mouseout', handleHover.bind(1));
 
 ///////////////////////////////////////
 // Sticky navigation
+/*
 
 // for get top position of the element value
 const initialCoords = section1.getBoundingClientRect();
@@ -193,7 +194,51 @@ window.addEventListener('scroll', function (e) {
   }
 
 });
+*/
 
+
+// Sticky navigation: Intersection Observer API
+
+/*
+
+const obsCallback = function (entries, observer) {
+  entries.forEach(entry => {
+    console.log(entry);
+  });
+};
+
+const obsOptions = {
+  root: null,
+  threshold: [0, 0.2],
+  rootMargin: '-90px',
+}
+
+const observer = new IntersectionObserver
+(obsCallback, obsOptions);
+observer.observe(section1);
+
+*/
+
+const header = document.querySelector('.header');
+const navHeight = nav.getBoundingClientRect().height;
+// console.log(navHeight);
+
+const stickyNav = function (entries) {
+  const entry = entries[0];
+  console.log(entry);
+  //ini utk sticky nav dia
+  if (!entry.isIntersecting) nav.classList.add('sticky');
+  else nav.classList.remove('sticky');
+};
+
+const headerObserver = new IntersectionObserver(stickyNav, {
+  root: null,
+  threshold: 0,
+  //ini utk bila sticky nav appear
+  rootMargin: `-${navHeight}px`,
+});
+
+headerObserver.observe(header);
 ///////////////////////////////////////
 // Reveal sections
 
