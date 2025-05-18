@@ -13,7 +13,7 @@ function Person(firstName, birthYear) {
     // };
 }
 
-const nizar = new Person('Nizar', 1991);
+const nizar = new Person('Nizar', 2001);
 console.log(nizar);
 
 //1. New () is created
@@ -27,3 +27,34 @@ const matilda = new Person('Matilda', 2017);
 console.log(jessica, matilda);
 
 console.log(jessica instanceof Person); // true
+
+//Prototypes
+
+console.log(Person.prototype); // Person {constructor: ƒ}
+Person.prototype.calcAge = function () {
+    console.log(2025 - this.birthYear);
+};
+nizar.calcAge();
+jessica.calcAge();
+matilda.calcAge();
+
+console.log(nizar.__proto__); // Person {constructor: ƒ, calcAge: ƒ}
+console.log(nizar.__proto__ === Person.prototype); // true
+
+console.log(Person.prototype.isPrototypeOf(nizar)); // true
+console.log(Person.prototype.isPrototypeOf(jessica)); // true
+console.log(Person.prototype.isPrototypeOf(matilda)); // true
+
+//.prototypeOfLinkedObjects
+
+//ini inheritance
+Person.prototype.species = 'Homo Sapiens';
+console.log(nizar, jessica, matilda);
+
+console.log(nizar.species); // Homo Sapiens
+console.log(jessica.species); // Homo Sapiens
+console.log(matilda.species); // Homo Sapiens
+
+//untuk check property apa yg ada di object(Person)
+console.log(nizar.hasOwnProperty('firstName')); // true
+console.log(nizar.hasOwnProperty('species')); // false
