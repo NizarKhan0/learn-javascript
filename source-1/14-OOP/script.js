@@ -58,3 +58,55 @@ console.log(matilda.species); // Homo Sapiens
 //untuk check property apa yg ada di object(Person)
 console.log(nizar.hasOwnProperty('firstName')); // true
 console.log(nizar.hasOwnProperty('species')); // false
+
+//prototypal inheritance
+
+console.log(nizar.__proto__);
+//Object.prototype ( top of the prototype chain)
+console.log(nizar.__proto__.__proto__);
+console.log(nizar.__proto__.__proto__.__proto__);
+
+//utk debug dia mcm console.log
+console.dir(Person.prototype.constructor); // ƒ Person(firstName, birthYear)
+
+const arr = [3, 6, 4, 5, 6, 9, 3]; // new Array === []
+console.log(arr.__proto__);
+console.log(arr.__proto__ === Array.prototype);
+
+console.log(arr.__proto__.__proto__);
+
+Array.prototype.unique = function () {
+    return [...new Set(this)];
+};
+
+console.log(arr.unique());
+
+const h1 = document.querySelector('h1');
+console.dir(x => x + 1);
+
+//Coding Challenge #2
+
+//1. Use a constructor function to implement a Car. A car has a make and a speed property. The speed property is the current speed of the car in km/h
+//2. Implement an 'accelerate' method that will increase the car's speed by 10, and log the new speed to the console
+//3. Implement a 'brake' method that will decrease the car's speed by 5, and log the new speed to the console
+//4. Create 2 car objects and experiment with calling 'accelerate' and 'brake' on both of them
+
+const Car = function (make, speed) {
+    this.make = make;
+    this.speed = speed;
+}
+Car.prototype.accelerate = function () {
+    this.speed += 10;
+    console.log(`${this.make} is going at ${this.speed} km/h`);
+};
+Car.prototype.brake = function () {
+    this.speed -= 5;
+    console.log(`${this.make} is going at ${this.speed} km/h`);
+};
+const bmw = new Car('BMW', 120);
+const mercedes = new Car('Mercedes', 95);
+
+bmw.accelerate();
+bmw.brake();
+mercedes.accelerate();
+mercedes.brake();
