@@ -110,3 +110,39 @@ bmw.accelerate();
 bmw.brake();
 mercedes.accelerate();
 mercedes.brake();
+
+
+//ES6 Classes
+
+// class expression
+// const PersonCl = class {};
+
+// class declaration
+class PersonCl {
+    constructor(firstName, birthYear) {
+        this.firstName = firstName;
+        this.birthYear = birthYear;
+    }
+    //Instance method
+    calcAge() {
+        console.log(2025 - this.birthYear);
+    }
+    greet() {
+        console.log(`Hey ${this.firstName}`);
+    }
+}
+
+const jessicaCl = new PersonCl('Jessica', 1996);
+console.log(jessicaCl);
+jessicaCl.calcAge();
+
+console.log(jessicaCl.__proto__ === PersonCl.prototype); // true
+
+// PersonCl.prototype.greet = function () {
+//     console.log(`Hey ${this.firstName}`);
+// }
+jessicaCl.greet(); // Hey Jessica
+
+//1. Classes are not hoisted
+//2. Classes are first-class citizens
+//3. Classes are executed in strict mode
