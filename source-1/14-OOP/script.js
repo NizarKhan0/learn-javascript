@@ -1,6 +1,5 @@
 'use strict';
 
-/*
 ///////////////////////////////////////
 // Constructor Functions and the new Operator
 const Person = function (firstName, birthYear) {
@@ -27,6 +26,7 @@ const jack = new Person('Jack', 1975);
 
 console.log(jonas instanceof Person);
 
+//Static methods
 Person.hey = function () {
   console.log('Hey there 👋');
   console.log(this);
@@ -83,7 +83,6 @@ console.log(arr.unique());
 
 const h1 = document.querySelector('h1');
 console.dir(x => x + 1);
-*/
 
 ///////////////////////////////////////
 // Coding Challenge #1
@@ -126,7 +125,6 @@ bmw.accelerate();
 
 */
 
-
 ///////////////////////////////////////
 // ES6 Classes
 
@@ -164,6 +162,7 @@ class PersonCl {
     return this._fullName;
   }
 
+  
   // Static method
   static hey() {
     console.log('Hey there 👋');
@@ -210,3 +209,4 @@ console.log(account.latest);
 
 account.latest = 50;
 console.log(account.movements);
+
