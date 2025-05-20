@@ -238,6 +238,83 @@ sarah.init('Sarah', 1979);
 sarah.calcAge();
 console.log(sarah.__proto__ === PersonProto);
 
+///////////////////////////////////////
+// Coding Challenge #2
+/*
+1. Use a constructor function to implement an Electric Car.
+2. The Electric Car will have all the properties and methods of the Car class from Challenge #1
+3. Additionally, the Electric Car will have a battery property (in kWh) and a charge method that charges the battery by 10% (and logs the current battery charge);
+4. Create an Electric Car object and experiment with calling 'accelerate', 'brake' and 'charge' multiple times on it.
+5. Data Electric Car 1: 'Tesla' with a battery of 100 kWh
+6. Data Electric Car 2: 'Rimac' with a battery of 85 kWh
+7. GOOD LUCK 😀
+*/
+
+const Car = function (make, speed) {
+  this.make = make;
+  this.speed = speed;
+};
+Car.prototype.accelerate = function () {
+  this.speed += 10;
+  console.log(`${this.make} is going at ${this.speed} km/h`);
+};
+Car.prototype.brake = function () {
+  this.speed -= 5;
+  console.log(`${this.make} is going at ${this.speed} km/h`);
+};
+const ElectricCar = function (make, speed, battery) {
+  Car.call(this, make, speed);
+  this.battery = battery;
+};
+ElectricCar.prototype = Object.create(Car.prototype);
+ElectricCar.prototype.charge = function () {
+  this.battery += 10;
+  console.log(`${this.make} is charging, battery at ${this.battery} kWh`);
+};
+const tesla = new ElectricCar('Tesla', 120, 100);
+const rimac = new ElectricCar('Rimac', 95, 85);
+tesla.accelerate();
+tesla.accelerate();
+tesla.brake();
+tesla.charge();
+tesla.accelerate();
 
 
+//////////////////////////////////
 
+// Inheritance Between "Classes": Constructor Functions
+
+const Person2 = function (firstName, birthYear) {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+}
+
+Person2.prototype.calcAge = function () {
+  console.log(2037 - this.birthYear);
+};
+
+const Student = function (firstName, birthYear, course) {
+  // Person.call(this, firstName, birthYear);
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+  this.course = course;
+};
+
+// Linking prototypes
+Student.prototype = Object.create(Person2.prototype);
+Student.prototype.introduce = function () {
+  console.log(`My name is ${this.firstName} and I study ${this.course}`);
+};
+
+const mike = new Student('Mike', 2020, 'Computer Science');
+mike.introduce();
+mike.calcAge();
+
+console.log(mike.__proto__);
+console.log(mike.__proto__.__proto__);
+
+console.log(mike instanceof Student);
+console.log(mike instanceof Person2);
+console.log(mike instanceof Object);
+
+console.dir(Student.prototype.constructor);
