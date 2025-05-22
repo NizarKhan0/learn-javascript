@@ -21,9 +21,10 @@ if (navigator.geolocation) {
       console.log(`https://www.google.com/maps/@${latitude},${longitude}`);
 
       // Display map use leaflet
-      const coords = [latitude, longitude];    
+      const coords = [latitude, longitude];
       const map = L.map('map').setView(coords, 13);
-    
+      //   console.log(map);
+
       L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution:
           '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -33,6 +34,26 @@ if (navigator.geolocation) {
         .addTo(map)
         .bindPopup('A pretty CSS popup.<br> Easily customizable.')
         .openPopup();
+
+      // Handling clicks on map marker
+      map.on('click', function (mapE) {
+        // console.log(mapE);
+        const { lat, lng } = mapE.latlng;
+        console.log(lat, lng);
+        L.marker([lat, lng])
+          .addTo(map)
+          .bindPopup(
+            L.popup({
+              maxWidth: 250,
+              minWidth: 100,
+              autoClose: false,
+              closeOnClick: false,
+              className: 'running-popup',
+            })
+        )
+          .setPopupContent('Workout')
+          .openPopup();
+      });
     },
     function () {
       alert('Could not get your position');
